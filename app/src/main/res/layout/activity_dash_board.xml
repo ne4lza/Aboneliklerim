@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".View.DashBoardActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_background"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/bottom_menu">
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    <View
+        android:id="@+id/viewHeaderBackGround"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_80sdp"
+        android:background="@color/primary"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </View>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        app:cardBackgroundColor="@color/card_background"
+        app:cardCornerRadius="@dimen/_16sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewHeaderBackGround"
+        app:layout_constraintTop_toBottomOf="@+id/viewHeaderBackGround">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/_14sdp">
+
+            <TextView
+                android:id="@+id/textViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aboneliklerde Son Durumun"
+                android:textColor="@color/primary_text"
+                android:textSize="@dimen/_17ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </TextView>
+
+            <LinearLayout
+                android:id="@+id/layoutClients"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/layoutImpacted"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViews">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:src="@drawable/subscription">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="Toplam Abonelik:"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/_10ssp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/productCountText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/_16ssp">
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutImpacted"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toStartOf="@id/layoutFollowing"
+                app:layout_constraintStart_toEndOf="@id/layoutClients"
+                app:layout_constraintTop_toBottomOf="@id/textViews">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:src="@drawable/price">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="Aylık Tutar"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/_10ssp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/priceSumTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="109.99"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/_16ssp">
+
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutFollowing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:gravity="center"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/layoutImpacted"
+                app:layout_constraintTop_toBottomOf="@id/textViews">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="@dimen/_28sdp"
+                    android:layout_height="@dimen/_28sdp"
+                    android:src="@drawable/price">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_4sdp"
+                    android:text="Yıllık Tutar"
+                    android:textColor="@color/primary_text"
+                    android:textSize="@dimen/_10ssp">
+
+                </TextView>
+
+                <TextView
+                    android:id="@+id/priceSumYearTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1319,88"
+                    android:textColor="@color/green"
+                    android:textSize="@dimen/_16ssp">
+
+                </TextView>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/prdocutRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="391dp"
+        app:layout_constraintBottom_toTopOf="@+id/adView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardHeader"
+        app:layout_constraintVertical_bias="0.927">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="SMART_BANNER"
+        app:adUnitId="ca-app-pub-3940256099942544/6300978111"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardHeader"
+        app:layout_constraintVertical_bias="1.0">
+
+    </com.google.android.gms.ads.AdView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
